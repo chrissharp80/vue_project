@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue Project</title>
+	<style></style>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+	<div class="main_frame" v-for="element in info_set">
+		<div class="photo_frame">
+			<img v-bind:src="element.url" alt="image" class="photo_size">
+		</div>
+		<div class="content_frame">
+			<div class="gap"></div>
+			<div class="title">
+				<h2>{{element.title}}</h2>
+			</div>
+			<div class="gap"></div>
+			<div class="summary">
+				<p>
+					{{element.summary}}
+				</p>
+			</div>
+			<div class="gap"></div>
+			<div class="category">
+				<span>{{element.category}}</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+model_1 = {
+	url: 'image1.jpg',
+	title: 'New Engine Developed',
+	summary: 'Recently, a new engine has been developed. As for what it can do, I have no idea.',
+	category: 'science',
+};
+model_2 = {
+	url: 'image2.jpg',
+	title: 'A Blue Helmet',
+	summary: 'I honestly have no idea why a blue helmet can be reported in the news.',
+	category: 'boring',
+};
+model_3 = {
+	url: 'image3.jpg',
+	title: 'King of the Internet!',
+	summary: 'His highness Dogge has granted us the honor of appearing on our course DEMO. I feel so honored!!!',
+	category: 'internet',
+};
+model_4 = {
+	url: 'image4.jpg',
+	title: 'Shocking Cat',
+	summary: 'Any image of a cat can get hot online. Smiley cat, sleepy cat, smelly cat, shocking cat.',
+	category: 'internet royalty',
+};
+model_5 = {
+	url: 'image5.jpg',
+	title: 'A Chimp',
+	summary: 'I do not know what to write here',
+	category: 'animal',
+};
+model_6 = {
+	url: 'image6.jpg',
+	title: 'Chinese HAN Sword',
+	summary: 'Finally, something cool!!! Chinese Han-Dynasty Sword!! Forged two millennium ago, so razor sharp today!',
+	category: 'military',
+};
+
+
+const vm = new Vue({
+	el: '#app',
+	data: {
+		info_set: [model_1, model_2, model_3, model_4, model_5, model_6]
+	}
+})
+</script>
+</body>
+</html>
